@@ -1,0 +1,67 @@
+---
+title: "NIHAN GENCERLILER"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: paper 
+---
+***
+<font size="4"> EDUCATION </font>
+
+**Columbia University Mailman School of Public Health**  
+New York, New York  
+Master of Public Health, Epidemiology with Certificate in Applied Biostatistics  
+Expected May 2020  
+
+**Macalester College**  
+Saint Paul, Minnesota  
+Bachelor of Arts, Biology  
+May 2017  
+
+**Bogazici University**  	
+Istanbul, Turkey  
+IES Abroad Program, Department of Molecular Biology and Genetics  
+Spring 2016  
+
+***
+<font size="4"> WORK EXPERIENCE </font>
+
+**Graduate Teaching Assistant**  
+Columbia University Mailman School of Public Health  
+August 2019 - Present  
+
+* Facilitated weekly discussion sessions and office hours for introductory epidemiology and biostatistics course for first-year Master of Public Health students  
+* Graded coursework for 21 students within 450 person cohort  
+
+**Research Intern**  
+New York City Department of Health and Mental Hygiene  
+June 2019 - Present  
+
+* Assisted in the evaluation of a new treatment program for individuals with behavioral health issues  
+* Performed entry, coding, cleaning, and analysis of process and outcome data  
+* Engaged in literature reviews to help guide decision-making  
+
+**Pharmacovigilance Coordinator**  
+ProPharma Group  
+July 2017 - May 2018  
+
+* Performed data entry of adverse drug reactions received via email, fax, or postal service.  
+* Monitored and performed activities required to fulfill the periodic regulatory reporting requirements for pharmaceutical clients.  
+
+**Undergraduate Researcher**  
+Heart, Lung, and Blood Program, University of Minnesota - Department of Pharmacology  
+June 2016 - August 2016  
+
+* Participated in highly selective, intensive research experience funded by the National Institutes of Health.  
+* Used molecular cloning techniques to assist in the induction of genetic manipulations in mice in order to better understand the role of cell excitability in drug addiction.  
+* Analyzed behavioral data and presented findings at the All Campus Poster Symposium.  
+
+***
+<font size="4"> SKILLS </font>
+
+* Proficient in R, Python, SAS, and SPSS.  
+* Certified in CITI and HIPAA  
+* Highly proficient in Microsoft Office, Premiere Pro, Salesforce, Siebel CRM, and Argus Safety.  
+(Skilled in Adobe Photoshop and other image editing software.  
+* Fluent in Turkish, proficient in Spanish.  

@@ -1,7 +1,12 @@
 ---
-title: "Nihan Gencerliler"
+title: "NIHAN GENCERLILER"
 output: 
   html_document:
     toc: true
     toc_float: true
+    theme: paper 
 ---
+Welcome.
+
+
+Click [here]() for my resume.
