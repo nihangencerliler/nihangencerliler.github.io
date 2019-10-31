@@ -6,7 +6,12 @@ output:
     toc_float: true
     theme: paper 
 ---
-Welcome.
+## Introduction
 
+Welcome to my personal website.
 
-Click [here]() for my resume.
+## Picture of My Cat
+
+## Learn More
+
+Click [here](./about.html) for my resume.

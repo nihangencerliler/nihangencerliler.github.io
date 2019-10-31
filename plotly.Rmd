@@ -1,0 +1,38 @@
+---
+title: "Plots"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: paper 
+---
+```{r setup, include=FALSE}
+library(p8105.datasets)
+library(tidyverse)
+library(stringr)
+library(forcats)
+library(viridis)
+library(plotly)
+```
+load data:
+```{r}
+data("rest_inspec")
+```
+## make plots
+ includes at least three distinct plot types (e.g. scatterplots, line plots, bar plots, box plots, etc.).
+
+```{r}
+x= list(
+  title = "Restaurant Grade")
+y= list(
+  title = "Number of Violations")
+rest_inspec_grades=
+rest_inspec %>% 
+  count(grade) %>%
+  mutate(grade = forcats::fct_relevel(grade, c("A","B","C","Z","P"))) %>% 
+  plot_ly(x = ~grade, y = ~n, color = ~grade, 
+          type = "bar") %>%
+  layout(xaxis=x, yaxis=y)
+rest_inspec_grades
+```
+

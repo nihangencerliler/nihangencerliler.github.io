@@ -7,7 +7,7 @@ output:
     theme: paper 
 ---
 ***
-<font size="4"> EDUCATION </font>
+## EDUCATION
 
 **Columbia University Mailman School of Public Health**  
 New York, New York  
@@ -25,7 +25,7 @@ IES Abroad Program, Department of Molecular Biology and Genetics
 Spring 2016  
 
 ***
-<font size="4"> WORK EXPERIENCE </font>
+## WORK EXPERIENCE
 
 **Graduate Teaching Assistant**  
 Columbia University Mailman School of Public Health  
@@ -58,7 +58,7 @@ June 2016 - August 2016
 * Analyzed behavioral data and presented findings at the All Campus Poster Symposium.  
 
 ***
-<font size="4"> SKILLS </font>
+## SKILLS
 
 * Proficient in R, Python, SAS, and SPSS.  
 * Certified in CITI and HIPAA  

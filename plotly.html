@@ -12,7 +12,7 @@
 
 
 
-<title>NIHAN GENCERLILER</title>
+<title>Plots</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,6 +26,13 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -385,21 +392,31 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">NIHAN GENCERLILER</h1>
+<h1 class="title toc-ignore">Plots</h1>
 
 </div>
 
 
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>Welcome to my personal website.</p>
-</div>
-<div id="picture-of-my-cat" class="section level2">
-<h2>Picture of My Cat</h2>
-</div>
-<div id="learn-more" class="section level2">
-<h2>Learn More</h2>
-<p>Click <a href="./about.html">here</a> for my resume.</p>
+<p>load data:</p>
+<pre class="r"><code>data(&quot;rest_inspec&quot;)</code></pre>
+<div id="make-plots" class="section level2">
+<h2>make plots</h2>
+<p>includes at least three distinct plot types (e.g. scatterplots, line plots, bar plots, box plots, etc.).</p>
+<pre class="r"><code>x= list(
+  title = &quot;Restaurant Grade&quot;)
+y= list(
+  title = &quot;Number of Violations&quot;)
+rest_inspec_grades=
+rest_inspec %&gt;% 
+  count(grade) %&gt;%
+  mutate(grade = forcats::fct_relevel(grade, c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;Z&quot;,&quot;P&quot;))) %&gt;% 
+  plot_ly(x = ~grade, y = ~n, color = ~grade, 
+          type = &quot;bar&quot;) %&gt;%
+  layout(xaxis=x, yaxis=y)
+rest_inspec_grades</code></pre>
+<pre><code>## Warning: Ignoring 1 observations</code></pre>
+<div id="htmlwidget-6d6f785ba22ea926eec7" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d6f785ba22ea926eec7">{"x":{"visdat":{"a59a496e9d91":["function () ","plotlyVisDat"]},"cur_data":"a59a496e9d91","attrs":{"a59a496e9d91":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Restaurant Grade","type":"category","categoryorder":"array","categoryarray":["A","B","C","Z","P","Not Yet Graded"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Number of Violations"},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["A"],"y":[153916],"type":"bar","name":"A","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["B"],"y":[27409],"type":"bar","name":"B","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["C"],"y":[6874],"type":"bar","name":"C","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Z"],"y":[3627],"type":"bar","name":"Z","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["P"],"y":[1465],"type":"bar","name":"P","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Not Yet Graded"],"y":[2356],"type":"bar","name":"Not Yet Graded","marker":{"color":"rgba(255,217,47,1)","line":{"color":"rgba(255,217,47,1)"}},"textfont":{"color":"rgba(255,217,47,1)"},"error_y":{"color":"rgba(255,217,47,1)"},"error_x":{"color":"rgba(255,217,47,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 
 
