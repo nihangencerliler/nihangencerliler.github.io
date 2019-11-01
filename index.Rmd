@@ -12,6 +12,9 @@ Welcome to my personal website.
 
 ## Picture of My Cat
 
+![](images/cat.png)
+
+
 ## Learn More
 
 Click [here](./about.html) for my resume.

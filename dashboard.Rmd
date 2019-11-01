@@ -17,6 +17,12 @@ library(plotly)
 set.seed(1)
 ```
 
+```{r clean, include=FALSE}
+data("rest_inspec")
+rest_inspec=
+rest_inspec %>% 
+  mutate(grade = forcats::fct_relevel(grade, c("A","B","C","Z","P","Not Yet Graded")), score=as.numeric((score)), camis=as.character(camis))
+```
 Column {data-width=650}
 -----------------------------------------------------------------------
 
@@ -38,7 +44,7 @@ rest_inspec %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Inspection Score by Borough
 
 ```{r}
 x= list(
@@ -53,8 +59,18 @@ y= list(
   layout(xaxis=x,yaxis=y,showlegend=FALSE)
 ```
 
-### Chart C
+### Number of Violations and Mean Score for Establishments with over 25 Violations
 
 ```{r}
-
+x= list(
+  title = "Mean Score")
+y= list(
+  title = "Number of Violations")
+rest_inspec %>% 
+  group_by(camis,) %>%
+  summarize(n=n(),score=mean(score)) %>%
+  filter(n>25) %>%
+  plot_ly(x = ~score, y = ~n, 
+          type = "scatter",mode="markers") %>%
+  layout(xaxis=x, yaxis=y)
 ```

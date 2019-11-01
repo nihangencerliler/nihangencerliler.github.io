@@ -22,8 +22,7 @@ set.seed(1)
 data("rest_inspec")
 rest_inspec=
 rest_inspec %>% 
-  mutate(grade = forcats::fct_relevel(grade, c("A","B","C","Z","P","Not Yet Graded")), score=as.numeric((score)), camis=as.character(camis)) 
-rest_inspec
+  mutate(grade = forcats::fct_relevel(grade, c("A","B","C","Z","P","Not Yet Graded")), score=as.numeric((score)), camis=as.character(camis))
 ```
 ## Plots
 
@@ -59,8 +58,19 @@ y= list(
 ```
 
 
-### Number of Violations for Establishments with over 50 Violations
+### Number of Violations and Mean Score for Establishments with over 25 Violations
 
 ```{r}
+x= list(
+  title = "Mean Score")
+y= list(
+  title = "Number of Violations")
+rest_inspec %>% 
+  group_by(camis,) %>%
+  summarize(n=n(),score=mean(score)) %>%
+  filter(n>25) %>%
+  plot_ly(x = ~score, y = ~n, 
+          type = "scatter",mode="markers") %>%
+  layout(xaxis=x, yaxis=y)
 ```
 
