@@ -16,7 +16,8 @@ library(viridis)
 library(plotly)
 set.seed(1)
 ```
-##Load and Clean Dataset
+
+## Load and Clean Dataset
 
 ```{r}
 data("rest_inspec")
@@ -42,6 +43,7 @@ rest_inspec %>%
   layout(xaxis=x, yaxis=y)
 
 ```
+
 ### Inspection Score by Borough
 ```{r}
 
