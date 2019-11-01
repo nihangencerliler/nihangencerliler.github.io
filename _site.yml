@@ -9,7 +9,7 @@ navbar:
       menu:
       - text: "Plotly"
         href: plotly.html
-      - text: "Dashboard"
+      - text: "Dashboard + Plotly"
         href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<ng2696@cumc.columbia.edu>

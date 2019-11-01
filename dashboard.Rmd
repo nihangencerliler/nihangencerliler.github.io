@@ -1,13 +1,13 @@
 ---
 title: "A Series of Plots Using NYC Restaurant Inspection Data"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
-    theme: paper 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
+library(flexdashboard)
 library(p8105.datasets)
 library(tidyverse)
 library(stringr)
@@ -16,22 +16,13 @@ library(viridis)
 library(plotly)
 set.seed(1)
 ```
-##Load and Clean Dataset
 
-```{r}
-data("rest_inspec")
-rest_inspec=
-rest_inspec %>% 
-  mutate(grade = forcats::fct_relevel(grade, c("A","B","C","Z","P","Not Yet Graded")), score=as.numeric((score)), camis=as.character(camis)) 
-rest_inspec
-```
-## Plots
+Column {data-width=650}
+-----------------------------------------------------------------------
 
 ### Number of Violations by Grade 
- includes at least three distinct plot types (e.g. scatterplots, line plots, bar plots, box plots, etc.).
 
 ```{r}
-
 x= list(
   title = "Restaurant Grade")
 y= list(
@@ -43,9 +34,13 @@ rest_inspec %>%
   layout(xaxis=x, yaxis=y)
 
 ```
-### Inspection Score by Borough
-```{r}
 
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
 x= list(
   title = "Borough")
 y= list(
@@ -58,9 +53,8 @@ y= list(
   layout(xaxis=x,yaxis=y,showlegend=FALSE)
 ```
 
-
-### Number of Violations for Establishments with over 50 Violations
+### Chart C
 
 ```{r}
-```
 
+```
